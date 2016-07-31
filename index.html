@@ -17,21 +17,26 @@
 <body>
   <h1>Simone</h1>
 
-  <div id="counter">
-    <h2>Round Count</h2>
-    <div id="count">0</div>
-  </div>
 
-  <div class="gameBoard">
+  <div id="gameBoard">
+      <div id="simon">
         <div id="p" class="simoneButton"></div>
         <div id="y" class="simoneButton"></div>
         <div id="w" class="simoneButton"></div>
         <div id="b" class="simoneButton"></div>
+      </div>
+          <div id="counter">
+          <div id="count">0</div>
+          </div>
+
+          <button class="gameControls" id="startGameButton">Start Game</button>
+          <button class="gameControls" id="newGameButton">Fail! Start New Game?</button>
   </div>
 
-  <button class="gameControls" id="startGameButton">Start Game</button>
-  <button class="gameControls" id="newGameButton">Fail! Start New Game?</button>
 
+    <audio controls id="sound">
+        <source id="tune" src="http://www.chiptape.com/chiptape/sounds/medium/PlaceTrap.wav" type="audio/wav">
+    </audio>
 
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="script.js" defer></script>

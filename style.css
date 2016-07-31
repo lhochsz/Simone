@@ -3,6 +3,7 @@ body {
   background-color: black;
 }
 
+
 h1 {
   color: #f93eda;
   text-align: center;
@@ -35,7 +36,7 @@ h2 {
   font-size: 1.5em;
 }
 
-.gameBoard {
+#simon {
   background-color: #ff00c3;
   justify-content: center;
   align-items: center;
@@ -105,8 +106,8 @@ button:focus {
   outline: none;
 }
 
-h3 {
-  color: white;
+audio {
+  display: none;
 }
 
 
