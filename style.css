@@ -7,10 +7,32 @@ h1 {
   color: #f93eda;
   text-align: center;
   font-weight: bold;
-  font-size: 5em;
+  font-size: 7em;
   font-family: 'Lobster', cursive;
   padding-top: 10px;
    -webkit-text-stroke: .5px white;
+}
+
+#counter {
+  background-color: white;
+  width: 12%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 30%;
+}
+
+h2 {
+  color: #f93eda;
+  font-size: 1.5em;
+}
+
+#count {
+  color: #f93eda;
+  margin-bottom: 10px;
+  font-size: 1.5em;
 }
 
 .gameBoard {
@@ -31,26 +53,26 @@ h1 {
 }
 
 
- #pinkButton.simoneButton {
-  background-color: #f93eda;
+ #p.simoneButton {
+  background-color: #fca9e7;
   width: 50%;
   border-top-left-radius: 100%;
 }
 
- #yellowButton.simoneButton {
-  background-color: #fff600;
+ #y.simoneButton {
+  background-color: #fcf8a9;
   width: 50%;
   border-bottom-left-radius: 100%;
 }
 
- #whiteButton.simoneButton {
+ #w.simoneButton {
   background-color: white;
   width: 50%;
   border-top-right-radius: 100%;
 }
 
- #blueButton.simoneButton {
-  background-color: #00ddff;
+ #b.simoneButton {
+  background-color: #b5eaf2;
   width: 50%;
   border-bottom-right-radius: 100%;
 }
@@ -67,6 +89,11 @@ button.gameControls {
   background-color: white;
   color: #f93eda;
   border: 2px dotted #f93eda;
+  margin: 10px 0;
+}
+
+#newGameButton {
+  display: none;
 }
 
 button.gameControls:hover {

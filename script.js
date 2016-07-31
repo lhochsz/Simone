@@ -1,36 +1,116 @@
 var game = {
-  board: null,
-  $board: null,
-  $statusMessage: null,
-  currentPlayer: 'player1',
+  sequence: [],
+  round: 0,
+  playNumber: 0,
+  speed: 1000,
+  clicked: 0
+}
 
-  togglePlayer: function() {
-    this.currentPlayer = (this.currentPlayer === 'player1' ? 'player2' : 'player1');
-  },
+// Change color if button selected by ID
 
-  showCurrentPlayer: function() {
-    this.$statusMessage.text(this.currentPlayer + 'turn');
-  },
+   $(document).ready(function() {
 
-  showWinner: function() {
-    this.$statusMessage.text('Player ' + this.currentPlayer + ' has won!');
-  },
+      function animate(divid) {
 
-  var pink = $('pinkButton')[0];
-  var yellow = $('yellowButton')[0];
-  var white = $('whiteButton')[0];
-  var blue = $('blueButton')[0];
+        /* if (game.round > 5) {
+            settings.speed = 500;
+        } */
 
-  var movesArray = ['pink', 'yellow', 'white', 'blue']; // in quotes??
-    for (var i = 0; i < movesArray.length; i++) {
-      var randomElement = movesArray[_.random(movesArray.length-1)];
-      movesArray.push(); // take an element from movesArray and push it randomly to newMovesArray
-
+      if (divid == "p") {
+        $("#p").css("background-color", "#ff00c3");
+        setTimeout(function() {
+          $("#p").css("background-color", "#fca9e7"); }, 200);
+      } else if (divid == "y") {
+        $("#y").css("background-color", "#fff600");
+        setTimeout(function() {
+          $("#y").css("background-color", "#fcf8a9"); }, 200);
+      } else if (divid == "w") {
+        $("#w").css("background-color", "#aaaaaa");
+        setTimeout(function() {
+          $("#w").css("background-color", "white"); }, 200);
+      } else if (divid == "b") {
+        $("#b").css("background-color", "#00ddff");
+        setTimeout(function() {
+          $("#b").css("background-color", "#b5eaf2"); }, 200);
     }
-    document.write(movesArray);
-  },
+}
 
-    var newMovesArray = [];
-      for (var i = 0; i <movesArray.length)
+// Make ID
 
+    function makeId() {
+        var text = "";
+        var possibleButton = "pywb";
+
+        for (var i = 0; i < 1; i++) {
+          text += possibleButton.charAt(Math.floor(Math.random() * possibleButton.length));
+          game.sequence.push(text);
+        }
+
+    function gameSequence() {
+      setTimeout(function() {
+        animate(game.sequence[game.playNumber]);
+        game.playNumber++;
+        if (game.playNumber < game.sequence.length) {
+          gameSequence();
+        } else {
+          game.playNumber = 0;
+          listenForClick();
+        }
+      }, game.speed)
+    }
+
+    gameSequence();
+}
+
+// Listen for player click
+
+    function listenForClick() {
+      $("#startGameButton").on("mousedown", function() {
+          if (this.id == game.sequence[game.clicked]) {
+
+              if (game.clicked === game.sequence.length - 1) {
+                $("#p, #y, #w, #b").off("mousedown");
+                game.clicked = 0;
+                $("#startGameButton").trigger("click");
+              } else {
+                console.log("Right!");
+                game.clicked++;
+              }
+
+          } else {
+            console.log("You clicked the wrong one.");
+            $("#newGameButton").show();
+            $("#startGameButton").hide();
+            $("#newGameButton").addClass("slideUp");
+            game.clicked = 0;
+            $("#p, #y, #w, #b").off("mousedown");
+          }
+      });
+    }
+
+// Start game
+
+  $("#p, #y, #w, #b").on("click", function() {
+    animate(this.id);
+  });
+
+  $("#startGameButton").on("click", function() {
+    $("#startGameButton").hide();
+    game.round++;
+    makeId();
+    $("#count").html(game.round);
+  });
+
+  $("#newGameButton").on("click", function() {
+    $("#newGameButton").hide();
+    game.sequence = [];
+    game.round = 0;
+    game.playNumber = 0;
+    game.speed = 1000;
+    game.clicked = 0;
+    $("#startGameButton").trigger("click");
+    $("#startGameButton").show();
+  });
+
+});
 

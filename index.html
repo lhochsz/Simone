@@ -6,7 +6,7 @@
   <meta name="description" content="Sample HTML Page">
   <meta name="author" content="Leslie Hochsztein">
 
-  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -17,17 +17,20 @@
 <body>
   <h1>Simone</h1>
 
-  <div class="gameBoard">
-        <button id="pinkButton" class="simoneButton"></button>
-        <button id="yellowButton" class="simoneButton"></button>
-        <button id="whiteButton" class="simoneButton"></button>
-        <button id="blueButton" class="simoneButton"></button>
+  <div id="counter">
+    <h2>Round Count</h2>
+    <div id="count">0</div>
   </div>
 
+  <div class="gameBoard">
+        <div id="p" class="simoneButton"></div>
+        <div id="y" class="simoneButton"></div>
+        <div id="w" class="simoneButton"></div>
+        <div id="b" class="simoneButton"></div>
+  </div>
 
-  <h3 id="statusMessage"></h3>
   <button class="gameControls" id="startGameButton">Start Game</button>
-  <button class="gameControls" id="newGameButton" onclick="game.reset()">New Game</button>
+  <button class="gameControls" id="newGameButton">Fail! Start New Game?</button>
 
 
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
