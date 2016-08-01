@@ -110,7 +110,7 @@ img {
 }
 
  #w.simoneButton {
-  background-color: white;
+  background-color: #ddd;
   width: 50%;
   border-top-right-radius: 100%;
 }
@@ -120,6 +120,27 @@ img {
   width: 50%;
   border-bottom-right-radius: 100%;
 }
+
+#p.selected {
+  background-color: #ff00c3;
+  transition: background-color 300ms linear;
+}
+
+#w.selected {
+  background-color: #fff;
+  transition: background-color 300ms linear;
+}
+
+#y.selected {
+  background-color: #ffff00;
+  transition: background-color 300ms linear;
+}
+
+#b.selected {
+  background-color: #00c7ff;
+  transition: background-color 300ms linear;
+}
+
 
 
 

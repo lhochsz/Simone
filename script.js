@@ -1,61 +1,93 @@
-var clicks = 0;
-var sequence = [];
+ game = {
+  sequence: [],
+  clicks: 0,
+  delayBetweenAnimations: 500
+}
 
 //listen for start button click and then call simon's turn
 
 $("#startGameButton").click(function() {
-
+  simonsTurn();
+  listenForUserClick();
 });
+
 
 //pick a random button and add it to the sequence array
 
-function createRandomArray() {
+function addNewRandomMove() {
   var randomNumber = Math.random();
+  console.log('random number: '+ randomNumber);
   if (randomNumber < 0.25) {
-    sequence.push("p");
+    game.sequence.push("p");
   } else if (randomNumber >= 0.25 && randomNumber < 0.5) {
-    sequence.push("y");
-  } else if (randomNumner >= 0.5 && randomNumber < 0.75) {
-    sequence.push("w");
+    game.sequence.push("y");
+  } else if (randomNumber >= 0.5 && randomNumber < 0.75) {
+    game.sequence.push("w");
   } else if (randomNumber >= 0.75) {
-    sequence.push("b");
+    game.sequence.push("b");
   }
+  console.log('game.sequence:', game.sequence);
+}
+
+function delayedAnimation(color, delay) {
+  setTimeout(function() {
+    howToAnimate(color);
+  }, delay);
 }
 
 //set up animation of buttons function
 function animateButtons() {
-  if (sequence[i] == "p") {
-    howToAnimate("#p");
-  } else if (sequence[i] == "y") {
-    howToAnimate("#y");
-  } else if (sequence[i] == "w") {
-    howToAnimate("#w");
-  } else if (sequence[i] == "b") {
-    howToAnimate("b");
+  for (var i = 0; i < game.sequence.length; i++) {
+    delayedAnimation(game.sequence[i], i * game.delayBetweenAnimations);
   }
 }
 
+
 //set up how to animate
-function howToAnimate() {
-  $(".simoneButton").animate(.css("opacity", 0.5));
-  $(".simoneButton").animate(.css("opacity", 0));
+function howToAnimate(color) {
+  console.log('howToAnimate:', color);
+  var simoneButton = $('#' + color);
+  simoneButton.addClass('selected');
+  setTimeout(function() {
+    simoneButton.removeClass('selected');
+  }, 320);
 }
 
 //it's simon's turn
 // call light up function to highlight a button
 
 function simonsTurn() {
-  createRandomArray();
+  addNewRandomMove();
   animateButtons();
 }
 
 
-// listen for click
+// listen for user click
 
+function listenForUserClick() {
+  // $(".simoneButton").click(function() {
+  //   if ($(".simoneButton") == sequence[i]) {
+  //     continue to next i;
+  //   } else if ($(".simoneButton") != sequence[i]) {
+  //     endOfGame();
+  //     reset;
+  //   }
+  // });
+}
 
 //add to counter
 
+ function addToCounter() {
+    // if (clicks.length = sequence) {
+    //   $("#count").text(round??);
+    // }
+ }
 
 //game over and reset
 
+function endOfGame() {
+  var sequence = [],
+  clicks = 0;
+
+}
 
