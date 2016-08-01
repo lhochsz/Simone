@@ -13,10 +13,6 @@ var game = {
 
       function animate(divid) {
 
-        /* if (game.round > 5) {
-            settings.speed = 500;
-        } */
-
       if (divid == "p") {
         $("#p").css("background-color", "#ff00c3");
         $("#tune").attr("src", "sounds/Jump-SoundBible.com-1007297584.mp3")
@@ -47,7 +43,7 @@ var game = {
 
 // Make ID
 
-    function makeId() {
+    function makeRandomId() {
         var text = "";
         var possibleColor = "pywb";
 
@@ -66,7 +62,7 @@ var game = {
           game.playNumber = 0;
           listenForClick();
         }
-      }, game.speed)
+      }, game.speed) // add in difficulties
     }
     gameSequence();
 }
@@ -81,6 +77,7 @@ var game = {
                 $("#p, #y, #w, #b").off("mousedown");
                 game.clicked = 0;
                 $("#startGameButton").trigger("click");
+                // add in difficulties
               } else {
                 console.log("Right!");
                 game.clicked++;
@@ -91,8 +88,8 @@ var game = {
             $("#newGameButton").show();
             $("#startGameButton").hide();
             $("#newGameButton").addClass("slideUp");
-            $("#simon, #count").css("filter", "blur(5px)");
-            $("#simon, #count").css("-webkit-filter", "blur(5px)");
+            $("#simon, #counter").css("filter", "blur(5px)");
+            $("#simon, #counter").css("-webkit-filter", "blur(5px)");
             game.clicked = 0;
             $("#p, #y, #w, #b").off("mousedown");
           }
@@ -101,21 +98,26 @@ var game = {
 
 // Start game
 
+
   $("#p, #y, #w, #b").on("click", function() {
     animate(this.id)
   });
 
   $("#startGameButton").on("click", function() {
+    $("#difficultyButtons").show();
     $("#startGameButton").hide();
-    $("#simon, #count").css("filter", "blur(0px)");
-    $("#simon, #count").css("-webkit-filter", "blur(0px)");;
+    $("#simon, #counter").css("filter", "blur(0px)");
+    $("#simon, #counter").css("-webkit-filter", "blur(0px)");;
     game.round++;
-    makeId();
+    makeRandomId();
     $("#count").html(game.round);
   });
 
+  // add in difficulties
+
   $("#newGameButton").on("click", function() {
     $("#newGameButton").hide();
+    $("#difficultyButtons").hide();
     game.sequence = [];
     game.round = 0;
     game.playNumber = 0;
@@ -127,3 +129,15 @@ var game = {
 
 });
 
+   /*
+     if $("#button-easy").click(function() {
+    console.log("speed 1");
+    game.speed = 1000;
+  }) else if $("#button-medium").click(function() {
+    console.log("speed 2");
+    game.speed = 500;
+  }) else if $("#button-hard").click(function() {
+    console.log("speed 3");
+    game.speed = 50;
+  });
+  */

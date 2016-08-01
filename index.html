@@ -15,24 +15,38 @@
 
 </head>
 <body>
-  <h1>Simone</h1>
 
+  <h1>Simone</h1>
 
   <div id="gameBoard">
       <div id="simon">
+
         <div id="p" class="simoneButton"></div>
         <div id="y" class="simoneButton"></div>
         <div id="w" class="simoneButton"></div>
         <div id="b" class="simoneButton"></div>
       </div>
-          <div id="counter">
-          <div id="count">0</div>
-          </div>
 
-          <button class="gameControls" id="startGameButton">Start Game</button>
-          <button class="gameControls" id="newGameButton">Fail! Start New Game?</button>
   </div>
 
+      <div id="scores">
+        <div id="counter">
+          <div id="roundCount">Round</div>
+          <div id="count">0</div>
+          <div id="allTime">All Time High Score</div>
+          <div id="count">0</div>
+        </div>
+      </div>
+
+
+      <button class="gameControls" id="startGameButton">Start Game</button>
+      <button class="gameControls" id="newGameButton">Fail! Start New Game?</button>
+
+      <div id="difficultyButtons">
+        <div class="button-easy">Easy</div>
+        <div class="button-medium">Medium</div>
+        <div class="button-hard">Hard</div>
+      </div>
 
     <audio controls id="sound">
         <source id="tune" src="http://www.chiptape.com/chiptape/sounds/medium/PlaceTrap.wav" type="audio/wav">
