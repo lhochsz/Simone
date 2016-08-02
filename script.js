@@ -1,7 +1,7 @@
  game = {
   sequence: [],
-  clicks: 0,
-  delayBetweenAnimations: 500
+  userClicks: 0,
+  delayBetweenAnimations: 1000,
 }
 
 //listen for start button click and then call simon's turn
@@ -9,6 +9,7 @@
 $("#startGameButton").click(function() {
   simonsTurn();
   listenForUserClick();
+  $("#headline").html('Simone');
 });
 
 
@@ -42,7 +43,6 @@ function animateButtons() {
   }
 }
 
-
 //set up how to animate
 function howToAnimate(color) {
   console.log('howToAnimate:', color);
@@ -53,41 +53,79 @@ function howToAnimate(color) {
   }, 320);
 }
 
+function lightUpOnClick(color) {
+  var simoneButtonClick = $('#', color);
+  simoneButtonClick.mousedown(function() {
+    simoneButtonClick.addClass('selected');
+     setTimeout(function() {
+      simoneButtonClick.removeClass('selected');
+    }, 320);
+  });
+}
+
+
 //it's simon's turn
 // call light up function to highlight a button
 
 function simonsTurn() {
   addNewRandomMove();
   animateButtons();
+  $("#count").html(game.sequence.length);
+
 }
 
+// function lightOnClick(color) {
+//   console.log('lightOnClick:', color);
+//   $(".simoneButton").click(function() {
+//     var simoneButton = $('#' + color);
+//     simoneButton.addClass('selected');
+//   });
+// }
 
-// listen for user click
 
-function listenForUserClick() {
-  // $(".simoneButton").click(function() {
-  //   if ($(".simoneButton") == sequence[i]) {
-  //     continue to next i;
-  //   } else if ($(".simoneButton") != sequence[i]) {
-  //     endOfGame();
-  //     reset;
-  //   }
-  // });
-}
 
-//add to counter
-
- function addToCounter() {
-    // if (clicks.length = sequence) {
-    //   $("#count").text(round??);
-    // }
- }
 
 //game over and reset
 
 function endOfGame() {
-  var sequence = [],
-  clicks = 0;
-
+  game.sequence = [],
+  game.userClicks = 0;
+  $('#count').html(0);
 }
+
+// listen for user click
+//add to counter
+
+function listenForUserClick() {
+  $("#p, #y, #w, #b").click(function() {
+    console.log('User clicked:', this.id, game.userClicks);
+    if (this.id == game.sequence[game.userClicks]) {
+          console.log("Right!");
+          game.userClicks++;
+
+          if (game.userClicks === game.sequence.length) {
+            game.userClicks = 0;
+            simonsTurn();
+          }
+    } else {
+          console.log("Wrong!");
+          $("#headline").text("Well, you failed!");
+          endOfGame();
+          // disable Simone buttons
+          $("#startGameButton").text("New Game?");
+    }
+  });
+}
+
+function listenAndLight () {
+  listenForUserClick();
+  // lightUpOnClick();
+}
+
+
+
+
+
+
+
 
