@@ -6,6 +6,24 @@ body {
   background-size: 100%;
 }
 
+h1 {
+  color: #f93eda;
+  text-align: center;
+  font-weight: bold;
+  font-size: 7em;
+  font-family: 'Lobster', cursive;
+  padding-top: 10px;
+   -webkit-text-stroke: .5px white;
+   margin: 0 0 5px 0;
+}
+
+img {
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+  float: right;
+}
+
 #gameBoard {
   display: flex;
   flex-direction: row;
@@ -36,7 +54,7 @@ body {
   border: 3px dotted #f93eda;
 }
 
-#roundCount, #allTime {
+#roundCount {
   color: #f93eda;
   font-size: 1.25em;
   font-family: 'Josefin Sans', sans-serif;
@@ -48,36 +66,6 @@ body {
   font-size: 1.5em;
   font-family: 'Josefin Sans', sans-serif;
 }
-
-#highScore {
-  background-color: white;
-  width: 8%;
-  height: 12%;
-  margin-top: 1em;
-  padding-top: 1em;
-  margin-bottom: 10px;
-  border-radius: 100%;
-}
-
-
-h1 {
-  color: #f93eda;
-  text-align: center;
-  font-weight: bold;
-  font-size: 7em;
-  font-family: 'Lobster', cursive;
-  padding-top: 10px;
-   -webkit-text-stroke: .5px white;
-}
-
-img {
-  width: 50%;
-  height: 50%;
-  display: inline-block;
-  float: right;
-}
-
-
 
 #simone {
   background-color: #ff00c3;
@@ -94,30 +82,27 @@ img {
 
 .simoneButton {
   height: 200px;
+  width: 50%;
 }
 
 
  #p {
   background-color: #fca9e7;
-  width: 50%;
   border-top-left-radius: 100%;
 }
 
  #y {
   background-color: #fcf8a9;
-  width: 50%;
   border-bottom-left-radius: 100%;
 }
 
  #w {
   background-color: #ddd;
-  width: 50%;
   border-top-right-radius: 100%;
 }
 
  #b {
   background-color: #b5eaf2;
-  width: 50%;
   border-bottom-right-radius: 100%;
 }
 
