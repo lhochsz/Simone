@@ -9,4 +9,4 @@ This is a GitHub of Leslie Hochsztein's Project 1 Simon game for GA WDI 7 in Atl
 * Sounds: [Sound Bible] (http://soundbible.com)
 
 ## Wireframe
-![alt text](Simone-Wireframe.png "Wireframe")
+![alt text](https://github.com/lhochsz/Simone/blob/master/css/Simone-Wireframe.png "Wireframe")
