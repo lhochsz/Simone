@@ -74,17 +74,6 @@ function simonsTurn() {
 
 }
 
-// function lightOnClick(color) {
-//   console.log('lightOnClick:', color);
-//   $(".simoneButton").click(function() {
-//     var simoneButton = $('#' + color);
-//     simoneButton.addClass('selected');
-//   });
-// }
-
-
-
-
 //game over and reset
 
 function endOfGame() {
@@ -122,7 +111,33 @@ function listenAndLight () {
   // lightUpOnClick();
 }
 
+ $("#p").mousedown(function() {
+    $("#p").addClass('selected');
+     setTimeout(function() {
+      $("#p").removeClass('selected');
+    }, 320);
+  });
 
+  $("#y").mousedown(function() {
+    $("#y").addClass('selected');
+     setTimeout(function() {
+      $("#y").removeClass('selected');
+    }, 320);
+  });
+
+   $("#w").mousedown(function() {
+    $("#w").addClass('selected');
+     setTimeout(function() {
+      $("#w").removeClass('selected');
+    }, 320);
+  });
+
+  $("#b").mousedown(function() {
+    $("#b").addClass('selected');
+     setTimeout(function() {
+      $("#b").removeClass('selected');
+    }, 320);
+  });
 
 
 
