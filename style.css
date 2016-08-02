@@ -97,25 +97,25 @@ img {
 }
 
 
- #p.simoneButton {
+ #p {
   background-color: #fca9e7;
   width: 50%;
   border-top-left-radius: 100%;
 }
 
- #y.simoneButton {
+ #y {
   background-color: #fcf8a9;
   width: 50%;
   border-bottom-left-radius: 100%;
 }
 
- #w.simoneButton {
+ #w {
   background-color: #ddd;
   width: 50%;
   border-top-right-radius: 100%;
 }
 
- #b.simoneButton {
+ #b {
   background-color: #b5eaf2;
   width: 50%;
   border-bottom-right-radius: 100%;

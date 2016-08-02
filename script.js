@@ -2,6 +2,7 @@
   sequence: [],
   userClicks: 0,
   delayBetweenAnimations: 1000,
+  delayAfterUserClick: 1000,
 }
 
 //listen for start button click and then call simon's turn
@@ -53,17 +54,6 @@ function howToAnimate(color) {
   }, 320);
 }
 
-function lightUpOnClick(color) {
-  var simoneButtonClick = $('#', color);
-  simoneButtonClick.mousedown(function() {
-    simoneButtonClick.addClass('selected');
-     setTimeout(function() {
-      simoneButtonClick.removeClass('selected');
-    }, 320);
-  });
-}
-
-
 //it's simon's turn
 // call light up function to highlight a button
 
@@ -82,7 +72,7 @@ function endOfGame() {
   $('#count').html(0);
 }
 
-// listen for user click
+// listen for user click and add time before next Simon turn
 //add to counter
 
 function listenForUserClick() {
@@ -94,7 +84,9 @@ function listenForUserClick() {
 
           if (game.userClicks === game.sequence.length) {
             game.userClicks = 0;
-            simonsTurn();
+            setTimeout(function() {
+              simonsTurn();
+              }, 500);
           }
     } else {
           console.log("Wrong!");
@@ -104,11 +96,6 @@ function listenForUserClick() {
           $("#startGameButton").text("New Game?");
     }
   });
-}
-
-function listenAndLight () {
-  listenForUserClick();
-  // lightUpOnClick();
 }
 
  $("#p").mousedown(function() {
