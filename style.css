@@ -175,41 +175,5 @@ button:focus {
     flex-direction: column;
   }
 
-.button-easy, .button-medium, .button-hard {
-  border: none;
-  color: black;
-  padding: 10px 25px;
-  font-family: 'Josefin Sans', sans-serif;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 12px;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  width: 150px;
-  margin-left: 1em;
-  display: inline-block;
-}
 
-.button-easy, .button-medium, .button-hard {
-  background-color: white;
-  color: #f93eda;
-  border: 2px dotted #f93eda;
-}
 
-.button-easy:hover, .button-medium:hover, .button-hard:hover {
-  color: black;
-  border: 2px solid black;
-}
-
-.button-easy:hover {
-  background-color: #56db0f;
-}
-
-.button-medium:hover {
-  background-color: #f7f73d;
-}
-
-.button-hard:hover {
-  background-color: red;
-}

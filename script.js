@@ -68,7 +68,6 @@ function simonesTurn() {
   addNewRandomMove();
   animateButtons();
   $("#count").html(game.sequence.length);
-
 }
 
 //game over and reset
