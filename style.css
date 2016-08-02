@@ -126,9 +126,6 @@ img {
   transition: background-color 300ms linear;
 }
 
-
-
-
 button.gameControls {
   padding: 10px 25px;
   font-family: 'Josefin Sans', sans-serif;
@@ -144,10 +141,6 @@ button.gameControls {
   margin: 10px 0;
 }
 
-#newGameButton {
-  display: none;
-}
-
 button.gameControls:hover {
   color: black;
   border: 2px solid black;
@@ -155,10 +148,6 @@ button.gameControls:hover {
 
 button:focus {
   outline: none;
-}
-
-audio {
-  display: none;
 }
 
 @media only screen and (max-width: 509px) {
