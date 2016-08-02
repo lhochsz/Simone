@@ -8,11 +8,16 @@
 //listen for start button click and then call simon's turn
 
 $("#startGameButton").click(function() {
-  $("#startGameButton").hide();
+  $("#startGameButton").css("visibility", "hidden");
   simonesTurn();
   listenForUserClick();
   $("#headline").html('Simone');
 });
+
+// Timing variables
+var highlightDuration = 320;
+var simoneWaitTime = 1000;
+
 
 
 //pick a random button and add it to the sequence array
@@ -57,7 +62,7 @@ function howToAnimate(color) {
     addSound();
   setTimeout(function() {
     simoneButton.removeClass('selected');
-  }, 320);
+  }, highlightDuration);
 
 }
 
@@ -92,14 +97,14 @@ function listenForUserClick() {
             game.userClicks = 0;
             setTimeout(function() {
               simonesTurn();
-              }, 500);
+              }, simoneWaitTime);
           }
     } else {
           console.log("Wrong!");
           $("#headline").text("Well, you failed!");
           endOfGame();
           // disable Simone buttons
-          $("#startGameButton").show();
+          $("#startGameButton").css("visibility", "visible");
           $("#startGameButton").text("New Game?");
     }
   });
@@ -110,7 +115,7 @@ function listenForUserClick() {
     pAudio.play();
      setTimeout(function() {
       $("#p").removeClass('selected');
-    }, 320);
+    }, highlightDuration);
   });
 
   $("#y").click(function() {
@@ -118,7 +123,7 @@ function listenForUserClick() {
     yAudio.play();
      setTimeout(function() {
       $("#y").removeClass('selected');
-    }, 320);
+    }, highlightDuration);
 
   });
 
@@ -127,7 +132,7 @@ function listenForUserClick() {
     wAudio.play();
      setTimeout(function() {
       $("#w").removeClass('selected');
-    }, 320);
+    }, highlightDuration);
   });
 
   $("#b").click(function() {
@@ -135,7 +140,7 @@ function listenForUserClick() {
     bAudio.play();
      setTimeout(function() {
       $("#b").removeClass('selected');
-    }, 320);
+    }, highlightDuration);
   });
 
 var pAudio = document.createElement('audio');

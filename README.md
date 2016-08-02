@@ -8,3 +8,5 @@ This is a GitHub of Leslie Hochsztein's Project 1 Simon game for GA WDI 7 in Atl
 * Background Image from [here] (http://www.wallpapername.com/Fictional_characters/comics_girls/blondes_blue_eyes_vector_pop_art_faces_roy_lichtenstein_1920x1080_wallpaper_47905/download_2560x1440)
 * Sounds: [Sound Bible] (http://soundbible.com)
 
+## Wireframe
+![alt text](Simone-Wireframe.png "Wireframe")
