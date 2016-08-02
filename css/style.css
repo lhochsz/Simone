@@ -1,7 +1,7 @@
 body {
   text-align: center;
   background-color: black;
-  background-image: url("images/Pop-Art-Wallpaper-HD.jpg");
+  background-image: url("Pop-Art-Wallpaper-HD.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -156,7 +156,7 @@ button:focus {
     font-size: 10em;
   }
 
-  #simon {
+  #simone {
   width: 500px;
   height: 500px;
   }
