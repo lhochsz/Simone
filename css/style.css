@@ -149,7 +149,7 @@ button:focus {
   outline: none;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 799px) {
 
   body {
     background-repeat: repeat-y;

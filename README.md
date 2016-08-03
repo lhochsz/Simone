@@ -23,7 +23,7 @@ Live site: [Simone] (https://lhochsz.github.io/Simone/)
 * Start/New Game Button
 * Sound on User Clicks and End of Game
 * Pop Art Simone theme
-* Responsive to large and small screen types
+* Responsive to Mobile and Computer screens
 
 ## Wireframe
 ![alt text](https://github.com/lhochsz/Simone/blob/master/css/Simone-Wireframe.png "Wireframe")
