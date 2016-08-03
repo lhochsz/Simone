@@ -144,17 +144,17 @@ function listenForUserClick() {
   });
 
 var pAudio = document.createElement('audio');
-  pAudio.setAttribute('src', 'sounds/Jump-SoundBible.com-1007297584.mp3');
+  pAudio.setAttribute('src', 'sounds/jump.mp3');
   pAudio.setAttribute('autoplay:false', 'autoplay');
 
 var yAudio = document.createElement('audio');
-  yAudio.setAttribute('src', 'sounds/Robot_blip_2-Marianne_Gagnon-299056732.mp3');
+  yAudio.setAttribute('src', 'sounds/robot.mp3');
   yAudio.setAttribute('autoplay:false', 'autoplay');
 
 var wAudio = document.createElement('audio');
-  wAudio.setAttribute('src', 'sounds/Robot_blip-Marianne_Gagnon-120342607.mp3');
+  wAudio.setAttribute('src', 'sounds/blip.mp3');
   wAudio.setAttribute('autoplay:false', 'autoplay');
 
 var bAudio = document.createElement('audio');
-  bAudio.setAttribute('src', 'sounds/Ting-Popup_Pixels-349896185.mp3');
+  bAudio.setAttribute('src', 'sounds/ting.mp3');
   bAudio.setAttribute('autoplay:false', 'autoplay');
