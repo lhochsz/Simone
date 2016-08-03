@@ -105,7 +105,6 @@ function endOfGame() {
   game.sequence = [];
   game.userClicks = 0;
   $('#count').html(0);
-    if (game.sequence.length > $("#count").html()) {
   console.log('sequence', game.sequence);
   console.log('clicks', game.userClicks);
 };
