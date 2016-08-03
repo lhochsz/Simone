@@ -2,7 +2,7 @@ body {
   text-align: center;
   background-color: black;
   background-image: url("Pop-Art-Wallpaper-HD.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%;
 }
 

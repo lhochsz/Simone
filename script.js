@@ -26,9 +26,9 @@ $("#startGameButton").click(function() {
           }
     } else {
           console.log("Wrong!");
-          $("#headline").text("Well, you failed!");
           endOfGame();
-          // disable Simone buttons
+          $("#headline").text("Well, you failed!");
+          endAudio.play();
           $("#startGameButton").css("visibility", "visible");
           $("#startGameButton").text("New Game?");
     }
@@ -38,8 +38,6 @@ $("#startGameButton").click(function() {
 // Timing variables
 var highlightDuration = 320;
 var simoneWaitTime = 700;
-
-
 
 //pick a random button and add it to the sequence array
 
@@ -110,6 +108,9 @@ function endOfGame() {
 // listen for user click and add time before next Simon turn
 //add to counter
 
+var endAudio = document.createElement('audio');
+  endAudio.setAttribute('src', 'sounds/sad_trombone.mp3');
+  endAudio.setAttribute('autoplay:false', 'autoplay');
 
  $("#p").click(function() {
     $("#p").addClass('selected');
@@ -159,3 +160,4 @@ var wAudio = document.createElement('audio');
 var bAudio = document.createElement('audio');
   bAudio.setAttribute('src', 'sounds/ting.mp3');
   bAudio.setAttribute('autoplay:false', 'autoplay');
+

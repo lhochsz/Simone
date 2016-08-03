@@ -13,7 +13,8 @@ Live site: INSERT LINK
 ## Technologies Used
 * Languages - HTML, CSS, JavaScript, jQuery
 * Design - Balsamiq, Google Fonts
-* Project Planning & User Storage: [Trello] (https://trello.com/b/i8zuX5Jp/simone-the-sassy-side-of-simon)
+* Sublime Text 3
+* Project Planning & User Stories: [Trello] (https://trello.com/b/i8zuX5Jp/simone-the-sassy-side-of-simon)
 * Background Image from [here] (http://www.wallpapername.com/Fictional_characters/comics_girls/blondes_blue_eyes_vector_pop_art_faces_roy_lichtenstein_1920x1080_wallpaper_47905/download_2560x1440)
 * Sounds: [Sound Bible] (http://soundbible.com)
 
@@ -30,3 +31,5 @@ Live site: INSERT LINK
 ## Future Development
 * All-Time High Score Counter
 * Easy, Medium and Hard Modes
+* Disable buttons during Simone's turn
+* End sequence play after user has lost
