@@ -8,7 +8,7 @@ Simone is a one-player game. When the player comes to the site, he or she sees a
 The game ends when the user clicks an incorrect button in the sequence
 The user then has the option to restart the game from round one again. The game will produce a completely different sequence each game.
 
-Live site: INSERT LINK
+Live site: [Simone] (https://lhochsz.github.io/Simone/)
 
 ## Technologies Used
 * Languages - HTML, CSS, JavaScript, jQuery
