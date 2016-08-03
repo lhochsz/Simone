@@ -4,9 +4,9 @@ This is a GitHub of Leslie Hochsztein's Project 1 Simon game for GA WDI 7 in Atl
 ## Overview
 For Project 1, I created a Simon game.  But instead of Simon, Simone tells you what to do!
 
-Simone is a one-player game. When the player comes to the site, he or she sees a game board and a start button.  Once the player hits the start button, the game lights up a random button.  The player must remember which button lit up and click it.  The game then re-lights the first button again, followed by another random button.  The user then must click the sequence in the right order as once more random buttons light up each round.
-The game ends when the user clicks an incorrect button in the sequence
-The user then has the option to restart the game from round one again. The game will produce a completely different sequence each game.
+Simone is a one-player game. When the player comes to the site, he or she sees a game board and a start button.  Once the player hits the start button, the game lights up a random button.  The player must remember which button lit up and click it.  The game then re-lights the first button, followed by another random button.  The user then must click the sequence in the right order as one more additional random button lights up each round.
+The game ends when the user clicks an incorrect button in the sequence.
+The user then has the option to restart the game from round one again. The game will produce a completely different random sequence each game.
 
 Live site: [Simone] (https://lhochsz.github.io/Simone/)
 
