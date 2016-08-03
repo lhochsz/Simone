@@ -15,7 +15,7 @@ $("#startGameButton").click(function() {
 });
 
 // Timing variables
-var highlightDuration = 320;
+var highlightDuration = 500;
 var simoneWaitTime = 1000;
 
 
@@ -73,6 +73,7 @@ function simonesTurn() {
   addNewRandomMove();
   animateButtons();
   $("#count").html(game.sequence.length);
+  $("#p, #y, #w, #b").removeAttr('disabled');
 }
 
 //game over and reset
