@@ -112,7 +112,7 @@ function endOfGame() {
 // end of game sound
 
 var endAudio = document.createElement('audio');
-  endAudio.setAttribute('src', 'sounds/sad_trombone.mp3');
+  endAudio.setAttribute('src', 'sounds/Sad_Trombone.mp3');
   endAudio.setAttribute('autoplay:false', 'autoplay');
 
 // user click events
