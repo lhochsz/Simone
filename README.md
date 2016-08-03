@@ -21,7 +21,7 @@ Live site: INSERT LINK
 ## Features
 * Round Counter
 * Start/New Game Button
-* Sounds on User Clicks
+* Sound on User Clicks and End of Game
 * Pop Art Simone theme
 * Responsive to large and small screen types
 
@@ -32,4 +32,3 @@ Live site: INSERT LINK
 * All-Time High Score Counter
 * Easy, Medium and Hard Modes
 * Disable buttons during Simone's turn
-* End sequence play after user has lost

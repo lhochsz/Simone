@@ -4,13 +4,15 @@
   delayBetweenAnimations: 900,
 }
 
-//listen for start button click and then call simon's turn
+//listen for start button click and then call simone's turn
 
 $("#startGameButton").click(function() {
   $("#startGameButton").css("visibility", "hidden");
   simonesTurn();
   $("#headline").html('Simone');
 });
+
+// listen for user click and add time before next Simone turn
 
   $("#p, #y, #w, #b").click(function() {
     console.log('User clicked:', this.id, game.userClicks);
@@ -63,6 +65,7 @@ function delayedAnimation(color, delay) {
 }
 
 //set up animation of buttons function
+
 function animateButtons() {
   for (var i = 0; i < game.sequence.length; i++) {
     delayedAnimation(game.sequence[i], i * game.delayBetweenAnimations);
@@ -71,6 +74,7 @@ function animateButtons() {
 };
 
 // set up how to animate and add sound
+
 function howToAnimate(color) {
   console.log('howToAnimate:', color);
   var simoneButton = $('#' + color);
@@ -86,7 +90,7 @@ function howToAnimate(color) {
 
 }
 
-//it's simon's turn
+//it's simone's turn
 // call light up function to highlight a button
 
 function simonesTurn() {
@@ -101,17 +105,20 @@ function endOfGame() {
   game.sequence = [];
   game.userClicks = 0;
   $('#count').html(0);
+    if (game.sequence.length > $("#count").html()) {
   console.log('sequence', game.sequence);
   console.log('clicks', game.userClicks);
 };
 
-// listen for user click and add time before next Simon turn
-//add to counter
+// end of game sound
 
 var endAudio = document.createElement('audio');
   endAudio.setAttribute('src', 'sounds/sad_trombone.mp3');
   endAudio.setAttribute('autoplay:false', 'autoplay');
 
+// user click events
+
+var pClick =
  $("#p").click(function() {
     $("#p").addClass('selected');
     pAudio.play();
@@ -120,15 +127,18 @@ var endAudio = document.createElement('audio');
     }, highlightDuration);
   });
 
+
+var yClick =
   $("#y").click(function() {
     $("#y").addClass('selected');
     yAudio.play();
      setTimeout(function() {
       $("#y").removeClass('selected');
     }, highlightDuration);
-
   });
 
+
+var wClick =
    $("#w").click(function() {
     $("#w").addClass('selected');
     wAudio.play();
@@ -137,6 +147,8 @@ var endAudio = document.createElement('audio');
     }, highlightDuration);
   });
 
+
+var bClick =
   $("#b").click(function() {
     $("#b").addClass('selected');
     bAudio.play();
