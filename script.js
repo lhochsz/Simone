@@ -1,7 +1,7 @@
  game = {
   sequence: [],
   userClicks: 0,
-  delayBetweenAnimations: 900,
+  delayBetweenAnimations: 700,
 }
 
 //listen for start button click and then call simone's turn
