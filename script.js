@@ -1,8 +1,7 @@
  game = {
   sequence: [],
   userClicks: 0,
-  delayBetweenAnimations: 1000,
-  delayAfterUserClick: 1000,
+  delayBetweenAnimations: 900,
 }
 
 //listen for start button click and then call simon's turn
@@ -10,13 +9,35 @@
 $("#startGameButton").click(function() {
   $("#startGameButton").css("visibility", "hidden");
   simonesTurn();
-  listenForUserClick();
   $("#headline").html('Simone');
 });
 
+  $("#p, #y, #w, #b").click(function() {
+    console.log('User clicked:', this.id, game.userClicks);
+    if (this.id == game.sequence[game.userClicks]) {
+          console.log("Right!");
+          game.userClicks++;
+
+          if (game.userClicks === game.sequence.length) {
+            game.userClicks = 0;
+            setTimeout(function() {
+              simonesTurn();
+              }, simoneWaitTime);
+          }
+    } else {
+          console.log("Wrong!");
+          $("#headline").text("Well, you failed!");
+          endOfGame();
+          // disable Simone buttons
+          $("#startGameButton").css("visibility", "visible");
+          $("#startGameButton").text("New Game?");
+    }
+  });
+
+
 // Timing variables
-var highlightDuration = 500;
-var simoneWaitTime = 1000;
+var highlightDuration = 320;
+var simoneWaitTime = 700;
 
 
 
@@ -47,8 +68,9 @@ function delayedAnimation(color, delay) {
 function animateButtons() {
   for (var i = 0; i < game.sequence.length; i++) {
     delayedAnimation(game.sequence[i], i * game.delayBetweenAnimations);
+    console.log('here', game.sequence);
   }
-}
+};
 
 // set up how to animate and add sound
 function howToAnimate(color) {
@@ -73,43 +95,21 @@ function simonesTurn() {
   addNewRandomMove();
   animateButtons();
   $("#count").html(game.sequence.length);
-  $("#p, #y, #w, #b").removeAttr('disabled');
 }
 
 //game over and reset
 
 function endOfGame() {
-  game.sequence = [],
+  game.sequence = [];
   game.userClicks = 0;
   $('#count').html(0);
-}
+  console.log('sequence', game.sequence);
+  console.log('clicks', game.userClicks);
+};
 
 // listen for user click and add time before next Simon turn
 //add to counter
 
-function listenForUserClick() {
-  $("#p, #y, #w, #b").click(function() {
-    console.log('User clicked:', this.id, game.userClicks);
-    if (this.id == game.sequence[game.userClicks]) {
-          console.log("Right!");
-          game.userClicks++;
-
-          if (game.userClicks === game.sequence.length) {
-            game.userClicks = 0;
-            setTimeout(function() {
-              simonesTurn();
-              }, simoneWaitTime);
-          }
-    } else {
-          console.log("Wrong!");
-          $("#headline").text("Well, you failed!");
-          endOfGame();
-          // disable Simone buttons
-          $("#startGameButton").css("visibility", "visible");
-          $("#startGameButton").text("New Game?");
-    }
-  });
-}
 
  $("#p").click(function() {
     $("#p").addClass('selected');
