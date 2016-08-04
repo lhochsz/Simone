@@ -34,21 +34,16 @@ img {
 #scores {
   display: flex;
   flex-wrap: wrap;
-  margin-right: 2em;
 }
 
 #counter {
   background-color: white;
   width: 6em;
   height: 12%;
+  padding: 1em 0;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 0;
-  margin-top: 1em;
-  margin-right: 1em;
-  padding-top: 1em;
-  margin-bottom: 10px;
   border-radius: 100%;
   border: 3px dotted #f93eda;
 }
@@ -61,17 +56,16 @@ img {
 
 #count {
   color: #f93eda;
-  margin-bottom: 10px;
   font-size: 1.5em;
   font-family: 'Josefin Sans', sans-serif;
 }
 
 #simone {
   background-color: #ff00c3;
+  margin: 0 4em;
   justify-content: center;
   align-items: center;
   display: flex;
-  margin: 0 5em 2em 0;
   flex-direction: column;
   flex-wrap: wrap;
   width: 450px;
@@ -137,7 +131,6 @@ button.gameControls {
   background-color: white;
   color: #f93eda;
   border: 2px dotted #f93eda;
-  margin: 10px 0;
 }
 
 button.gameControls:hover {
@@ -165,12 +158,12 @@ button:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 5em;
   }
 
   #simone {
   width: 300px;
   height: 300px;
+  margin: 3em 0;
   }
 
   .simoneButton {
@@ -195,13 +188,12 @@ button:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 5em;
   }
 
   #simone {
   width: 400px;
   height: 400px;
-  margin-left: 50px;
+  margin: 3em 0;
   }
 
   .simoneButton {
